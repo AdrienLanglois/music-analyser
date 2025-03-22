@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/music-analyser/static/css/main.c00ce5d8.css",
-    "main.js": "/music-analyser/static/js/main.d53a5495.js",
+    "main.css": "/music-analyser/static/css/main.8f6024f6.css",
+    "main.js": "/music-analyser/static/js/main.cc2bdcd9.js",
     "static/js/453.38a21594.chunk.js": "/music-analyser/static/js/453.38a21594.chunk.js",
     "static/media/ChopinScript.ttf": "/music-analyser/static/media/ChopinScript.294d294101e0ae84b924.ttf",
     "static/media/Headlines-Bold.otf": "/music-analyser/static/media/Headlines-Bold.df8afd9b5400740dbf5f.otf",
     "index.html": "/music-analyser/index.html",
-    "main.c00ce5d8.css.map": "/music-analyser/static/css/main.c00ce5d8.css.map",
-    "main.d53a5495.js.map": "/music-analyser/static/js/main.d53a5495.js.map",
+    "main.8f6024f6.css.map": "/music-analyser/static/css/main.8f6024f6.css.map",
+    "main.cc2bdcd9.js.map": "/music-analyser/static/js/main.cc2bdcd9.js.map",
     "453.38a21594.chunk.js.map": "/music-analyser/static/js/453.38a21594.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c00ce5d8.css",
-    "static/js/main.d53a5495.js"
+    "static/css/main.8f6024f6.css",
+    "static/js/main.cc2bdcd9.js"
   ]
 }
