@@ -32,7 +32,11 @@ export default function Home(){
         <div>
             <div style={{zIndex:10, position:"relative"}}>
                 <h1 className={styles.title}>An Interactive <br />Circle of Fifths</h1>
-                <span className={styles.websiteDesc}>A tool designed to help you study music theory and compose songs</span>
+                <p className={styles.websiteDesc}>
+                    <span >A tool designed to help you study music theory and compose songs.</span>
+                    <br />
+                    <span className={styles.usage}>Click on any key on the Circle Of Fifth </span>to see it's scale and chords.
+                </p>
 
             </div>
             <div className="flex items-center">

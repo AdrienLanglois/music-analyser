@@ -13,10 +13,15 @@ body{
 
 .title{
     font-size: 5em;
-    color: var(--gold) 
+    color: var(--primary-light) 
 }
 
 .websiteDesc{
     color: var(--primary-lavender);
     font-size: 1.8em ;
+}
+
+.usage{
+    font-weight: 600;
+    color: var(--gold);
 }
