@@ -43,11 +43,9 @@ background-color: #0056b3;
     color: var(--primary-lavender);
     font-weight: bold;
     font-size: 4.8em;
-    font-family: 'headlines';
 }
 
 .subtitle{
-    font-family: 'headlines';
 
     color: var(--primary-light);
     font-size: 3em;

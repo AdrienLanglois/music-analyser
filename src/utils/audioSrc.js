@@ -42,9 +42,9 @@ export const piano = new Tone.Sampler({
     baseUrl: "https://tonejs.github.io/audio/salamander/"
 }).toDestination();
 
-export const guitar = new Tone.Sampler({
+/* export const guitar = new Tone.Sampler({
     urls: urls,
     // Cela règle la durée de permanence des notes jouées
     release: 10,
     baseUrl: "https://github.com/nbrosowsky/tonejs-instruments/blob/master/samples/guitar-acoustic/"
-}).toDestination();
+}).toDestination(); */
