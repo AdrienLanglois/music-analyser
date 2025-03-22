@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/music-analyser/static/css/main.b1646d95.css",
+    "main.js": "/music-analyser/static/js/main.eb207a31.js",
+    "static/js/453.38a21594.chunk.js": "/music-analyser/static/js/453.38a21594.chunk.js",
+    "static/media/ChopinScript.ttf": "/music-analyser/static/media/ChopinScript.294d294101e0ae84b924.ttf",
+    "static/media/Headlines-Bold.otf": "/music-analyser/static/media/Headlines-Bold.df8afd9b5400740dbf5f.otf",
+    "index.html": "/music-analyser/index.html",
+    "main.b1646d95.css.map": "/music-analyser/static/css/main.b1646d95.css.map",
+    "main.eb207a31.js.map": "/music-analyser/static/js/main.eb207a31.js.map",
+    "453.38a21594.chunk.js.map": "/music-analyser/static/js/453.38a21594.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b1646d95.css",
+    "static/js/main.eb207a31.js"
+  ]
+}
