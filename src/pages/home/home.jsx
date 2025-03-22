@@ -36,7 +36,7 @@ export default function Home(){
                 <p className={styles.websiteDesc}>
                     <span >A tool designed to help you study music theory and compose songs.</span>
                     <br />
-                    <span className={styles.usage}>Click on any key on the Circle Of Fifth </span>to see it's scale and chords.
+                    <span className={styles.usage}>Click on any key on the Circle Of Fifths </span>to see it's scale and chords.
                 </p>
 
             </div>

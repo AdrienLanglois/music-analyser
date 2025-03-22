@@ -67,7 +67,7 @@
     width: 8px;
 
     border-radius: 100%;
-    background-color: var(--primary-light);
+    background-color: var(--gold);
   }
 
   .white > .dot{
