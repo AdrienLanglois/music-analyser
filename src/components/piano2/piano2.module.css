@@ -29,6 +29,9 @@
   border-radius: 5px;
   position: relative;
   box-shadow: 5px 5px 10px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .black {
@@ -55,3 +58,23 @@
     background:linear-gradient(to bottom,#fff 0%,#e9e9e9 100%)
   }
 
+  .playedNote{
+    background: var(--accent-cyan);
+  }
+
+  .dot{
+    height: 8px;
+    width: 8px;
+
+    border-radius: 100%;
+    background-color: var(--primary-light);
+  }
+
+  .white > .dot{
+    position: absolute;
+    bottom: 5px;
+  }
+
+  .black > .dot{
+    margin: 5px 11px;
+  }

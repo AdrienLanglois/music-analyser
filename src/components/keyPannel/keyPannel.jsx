@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as Tone from "tone";
 import styles from './keyPannel.module.css'
 import * as Chord from '../../utils/chords'
 import * as AudioSrc from '../../utils/audioSrc'
 
-export default function KeyPannel({scale, chords, notes}){
+export default function KeyPannel({scale, chords, notes, onPlayChord}){
     const chordsIndex = ["I", "II", "III", "IV", "V", "VI", "VII"];
+    const timeBetweenScaleNotes = 0.3
+    const getDefaultIsNotePlayed = () => Array.from({length: 10}, () => false)
+    const [isNotePlayed, setIsNotePlayed] = useState(getDefaultIsNotePlayed())
     
 
     function getNotesWithOctave(){
@@ -25,9 +28,31 @@ export default function KeyPannel({scale, chords, notes}){
         await Tone.start(); // Ensure audio is enabled
         const now = Tone.now(); // Get current time
 
+        HighlightPlayedNotes();
+
         getNotesWithOctave().forEach((note, index) => {
-            AudioSrc.piano.triggerAttackRelease(note, "8n", now + index * 0.5);
+            AudioSrc.piano.triggerAttackRelease(note, "8n", now + index * timeBetweenScaleNotes);
         });
+    }
+
+    function HighlightPlayedNotes(){
+        isNotePlayed.forEach((_, index) => {
+            setTimeout(() => {
+                let updated = getDefaultIsNotePlayed();
+                updated[index] = true;
+                setIsNotePlayed(updated)
+            }, index * timeBetweenScaleNotes * 1000);
+        })
+
+        setTimeout(() => {
+            setIsNotePlayed(getDefaultIsNotePlayed());
+        }, isNotePlayed.length * timeBetweenScaleNotes * 1000);
+    }
+
+    function playChord(chord){
+        const notes = Chord.getChordNotes(chord)
+        Chord.play(notes);
+        onPlayChord(notes)
     }
 
     
@@ -37,6 +62,7 @@ export default function KeyPannel({scale, chords, notes}){
             <span className={styles.title}>{scale} Major</span><br />
             <span className={styles.subtitle}>Scale</span>
 
+            {/* Play Button */}
             <div className="flex flex-row justify-center items-center gap-4">
                 <div className={styles.buttonContainer} onClick={playScale}>
                     <label className={styles.buttonLabel}>
@@ -47,11 +73,15 @@ export default function KeyPannel({scale, chords, notes}){
                         </div>
                     </label>
                 </div>
+                
+                {/* Scale notes */}
                 <div className='flex gap-3'>
                     {notes.map((note, index) => (
-                        <span key={index} className={styles.text}> {note}</span>
+                        <span key={index} className={`${styles.scaleNote} ${isNotePlayed[index] ? styles.playedNote : ""}`}>
+                            {note}
+                        </span>
                     ))}
-                </div>
+                </div> 
             </div>
                     <br />
             <span className={styles.subtitle} style={{marginTop:'2em'}}>Chords</span>
@@ -64,7 +94,7 @@ export default function KeyPannel({scale, chords, notes}){
                 ))}
 
                 {chords.map((chord, index) => (
-                    <button key={index} className={styles.chordBtn} onClick={() => Chord.play(chord)}>
+                    <button key={index} className={styles.chordBtn} onClick={() => playChord(chord)}>
                         {chord}
                     </button>
                 ))}

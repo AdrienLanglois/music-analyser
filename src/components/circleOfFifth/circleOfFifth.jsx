@@ -41,7 +41,6 @@ export default function CircleOfFifth({ onSelectNote }){
     minor.forEach(n => newTextColors[n] = styles.minorChord);
     newTextColors[diminished] = styles.dimChord;
     newTextColors[root] = styles.rootChord;
-    console.log(newTextColors);
 
     SetTextColors(newTextColors);
   }

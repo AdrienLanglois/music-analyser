@@ -27,6 +27,7 @@ export default function Home(){
     
 
       const [selectedNote, setSelectedNote] = useState("C");
+      const [playedChord, setPlayedChord] = useState([])
 
     return (
         <div>
@@ -42,8 +43,8 @@ export default function Home(){
             <div className="flex items-center">
                 <CircleOfFifth onSelectNote={setSelectedNote}/>
                 <div className={styles.rightPannel}>
-                    <KeyPannel scale={selectedNote} chords={chords[selectedNote]} notes={keyNotes[selectedNote]}/>
-                    <Piano2/>                    
+                    <KeyPannel scale={selectedNote} chords={chords[selectedNote]} notes={keyNotes[selectedNote]} onPlayChord={setPlayedChord}/>
+                    <Piano2 playedChord={playedChord} scaleNotes={keyNotes[selectedNote]}/>                    
                 </div>
             </div>
         </div>

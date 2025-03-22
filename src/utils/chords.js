@@ -33,11 +33,9 @@ export const keyNotes = {
     "Cb": ["B", "Db", "Eb", "E", "Gb", "Ab", "Bb"]  // Fb is enharmonic to E
 };
 
-export async function play(chord) {
+export async function play(chordNotes) {
     await Tone.start();
-    const notes = getChordNotes(chord)
-    console.log(notes)
-    const notesWithOctave = notes.map(note => note+'4')
+    const notesWithOctave = chordNotes.map(note => note+'4')
     piano.triggerAttackRelease(notesWithOctave, "4n"); // G major chord
 }
 
@@ -51,6 +49,18 @@ export function sharpToFlat(notes){
     };
     
     return notes.map(note => sharpToFlat[note] || note);
+}
+
+export function flatToSharp(notes){
+    const flatToSharp = {
+        "Db": "C#",
+        "Eb": "D#",
+        "Gb": "F#",
+        "Ab": "G#",
+        "Bb": "A#",
+    };
+    
+    return notes.map(note => flatToSharp[note] || note);
 }
 
 export function getChordNotes(chord){

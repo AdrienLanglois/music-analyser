@@ -1,9 +1,10 @@
 import React from "react";
 import styles from './piano2.module.css'
 import {guitar, piano} from '../../utils/audioSrc'
+import { flatToSharp, sharpToFlat } from "../../utils/chords";
 
 
-export default function Piano2(){
+export default function Piano2({playedChord, scaleNotes}){
     const notes = [
         "F3", "F#3", "G3", "G#3", "A3", "A#3", "B3",
         "C4", "C#4", "D4", "D#4", "E4", "F4", "F#4", "G4", "G#4",
@@ -38,16 +39,24 @@ export default function Piano2(){
       ];
 
       const playNote = (note) => {
-        console.log(note)
-          piano.triggerAttackRelease(note, "8n");
-        };
+        piano.triggerAttackRelease(note, "8n");
+      };
     
       return (
         <div className={styles.container}>
           <div className={styles.pianoContainer}>
             <ul className={styles.pianoKeysList}>
               {keys.map((key, index) => (
-                <li key={index} className={key.type} data-list={key.id} onClick={() => playNote(key.note)}></li>
+                <li 
+                  key={index} 
+                  className={`${key.type} ${key.note.endsWith('4') && flatToSharp(playedChord).includes(key.note.slice(0,-1)) ? styles.playedNote : ''}`} 
+                  data-list={key.id} 
+                  onClick={() => playNote(key.note)}>
+
+                    {flatToSharp(scaleNotes).includes(key.note.slice(0,-1)) &&
+                      <div className={styles.dot}/>                    
+                    }
+                </li>
               ))}
             </ul>
           </div>
