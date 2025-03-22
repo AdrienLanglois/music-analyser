@@ -1,0 +1,22 @@
+body{
+    background: var(--primary-darker);
+/*     background: linear-gradient(90deg, rgba(26,1,58,1) 75%, var(--primary-dark) 82%);
+ */}
+
+.rightPannel{
+    border-radius: 1em;
+    padding: 1% 2%;
+    background-color: var(--primary-dark);
+    z-index: 2;
+    border: 3px solid var(--primary-light);
+}
+
+.title{
+    font-size: 5em;
+    color: var(--primary-lavender) 
+}
+
+.websiteDesc{
+    color: var(--primary-lavender);
+    font-size: 1.8em ;
+}

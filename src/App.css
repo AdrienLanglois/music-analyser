@@ -1,0 +1,64 @@
+.App {
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+span{
+  cursor: default;
+}
+
+:root {
+  /* Primary Colors */
+  --primary: #4d0099; /* Deep Purple */
+  --primary-dark: #3a0073; /* Dark Purple */
+  --primary-darker: #1a013a; /* Dark Purple */
+  --primary-light: #7a33cc; /* Light Purple */
+  --primary-lavender: #c2a3e6; /* Soft Lavender */
+
+  /* Analogous Colors */
+  --blue: #330099; /* Deep Blue */
+  --magenta: #990099; /* Magenta */
+
+  /* Complementary Colors */
+  --gold: #ffcc33; /* Bright Gold */
+  --orange: #ff6600; /* Warm Orange */
+
+  /* Neutral Colors */
+  --neutral-dark: #1a1a1a; /* Dark Grey */
+  --neutral-soft: #f4e3ff; /* Soft Beige */
+  --neutral-offwhite: #faf8fc; /* Off-White */
+
+  /* Accent Colors */
+  --accent-cyan: #0099cc; /* Cyan Blue */
+  --accent-pink: #ff3399; /* Electric Pink */
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  --gradient-analogous: linear-gradient(135deg, var(--analogous-blue), var(--analogous-magenta));
+  --gradient-complementary: linear-gradient(135deg, var(--complementary-gold), var(--complementary-orange));
+}
+
+@font-face {
+  font-family: "chopin";
+  src: url("assets/fonts/ChopinScript.ttf");
+}
+
+@font-face {
+  font-family: "headlines";
+  src: url("assets/fonts/Headlines-Bold.otf");
+}
